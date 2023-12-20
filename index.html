@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Bond Quotes</title>
+</head>
+<body>
+
+</body>
+<script>
+  const api="https://script.googleusercontent.com/macros/echo?user_content_key=gWvUt1Fd2Wa-aqRN6hZC3jMlhGFuoZvEKD1UOOwtvLmEK4eTbtijxz9hvucKzD4wuVusRxyZ5inNE-XFJchh_7MmSXOtOF70m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnAzhiDl7L3BMLzzARNs4-9JaptOaDlTSjMJzqA0_QdIOMoZ9xn24VxR-Rh4HGDmh2HheVbzot5OhxyFxtqh1JHH_gVC312RxSg&lib=MgzQb_qKovM36vCn_Mwnq6P1AKxgSVOtc";
+    fetch(api)
+   .then(response => response.json())
+   .then(characters => showCharacters(characters.data));
+   showCharacters = characters => {
+
+    document.write("<table class='tab'><tr class='tab'><th class='tab'><h2>Name</h2></th><th class='tab'><h2>USN</h2></th><th>");
+    characters.forEach(character => {
+        if(character.Film!="Film"){
+      document.write("<tr style='color:black;font-weight: bold;'><td>" + character.Film + "</td><td class='tab'>" + character.Quote + "</td><td>");
+      }
+    });
+}
+</script>
+</html>
+<!-- https://dev.to/varshithvhegde/easy-way-to-create-your-own-api-for-free-1mbc -->
+<!-- https://script.google.com/u/0/home/projects/1ArRqWsyqDFPE6BfV_6Mg1Nv9_MnG-ZRndYqyVB9q4BkwEGb4qpeM5Jhf/edit -->
